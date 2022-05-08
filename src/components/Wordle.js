@@ -36,7 +36,7 @@ export default function Wordle({solution,wordsList}) {
             <Keypad handleKeyUp={showModal ? null : handleKeyUp} usedKeys={usedKeys}/>
             {(showModal || showHint) && <Modal isCorrect={isCorrect} turn={turn} solution={solution} showHint={showHint} hintHandler={hintHandler}/>}
             {showTooltip.error && <Tooltip message={showTooltip.message}/>}
-            <div className="hint-wrp" onClick={hintHandler.bind(this, true)}><img src={process.env.PUBLIC_URL+"hint.png"} alt="Hint"/></div>
+            <div className="hint-wrp" onClick={hintHandler.bind(this, true)}><img src={process.env.PUBLIC_URL+"/hint.png"} alt="Hint"/></div>
         </React.Fragment>
     )
 }
