@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
   padding: 0 20px;
@@ -67,17 +69,22 @@ code {
   max-width: 530px;
   margin: 20px auto;
 }
+.keypad-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .keypad-row > div {
   margin: 5px;
   width: 40px;
   height: 50px;
-  background: #eee;
-  display: inline-block;
+  background: #d3d6da;
   border-radius: 6px;
   line-height: 50px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 500;
+  padding: 0 5px;
 }
 .keypad-row > div.width-key {
   width: 80px;
@@ -111,7 +118,7 @@ code {
   text-transform: uppercase;
 }
 .modal>div {
-  max-width: 480px;
+  width: 80%;
   background: #fff;
   padding: 40px;
   border-radius: 10px;
@@ -122,6 +129,9 @@ code {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow-y: auto;
+  word-break: break-word;
+  max-height: 80vh;
 }
 .modal .close-modal {
   position: absolute;
@@ -163,12 +173,13 @@ code {
   font-style: italic;
 }
 .hint-wrp {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
   width: 50px;
   height: 50px;
   cursor: pointer;
+  background:#fff;
 }
 .hint-wrp img {
   width: 100%;
@@ -227,5 +238,32 @@ code {
   }
   40%,60% {
     transform: translateX(4px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .row>div {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+  }
+  .keypad-row > div {
+    font-size: 0.8rem;
+    margin: 3px;
+  }
+  
+}
+@media screen and (max-width: 480px) {
+  .App {
+    padding: 0 8px;
+  }
+  .keypad-row > div {
+    height: 45px;
+    line-height: 45px;
+    margin: 2px
+  }
+  .modal>div {
+    padding: 15px;
+    width: 90%;
   }
 }
