@@ -94,7 +94,7 @@ const useWordle = (solution,wordsList) => {
                 return;
             }
             if(!wordsList.includes(currentGuess)) {
-                setToolTip({error:true,message: 'Enter valid 5 letter verb'});
+                setToolTip({error:true,message: 'Enter valid 5 letter word'});
                 setTimeout(()=> {
                     setToolTip({error:false, message: ''});
                 },1000);
